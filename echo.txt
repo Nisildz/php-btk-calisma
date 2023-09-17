@@ -1,0 +1,354 @@
+echo <<<END
+
+END 
+
+Sonraki endi görene kadar içindeki her şeyi yazdırır.Endlerden önce ve sonra bir şey yazılamaz.
+
+
+eğer tek tırnak kullanıyorsan ve de tırnak ile ayrıma yapman gerekirse \ters slash işareti ile atlama yapabilirsin.
+
+türkiye\'nin
+
+tek trınak kullanıldığında değişkenler gözükmez.
+deişkenler süslü parantez içinde de kullanılır önreğin ; {$Ornek1}
+
+parantezde kullanabilirsin 
+print ("nisa");
+echo("nisa");
+
+
+//açıklama satırı
+#açıklama satırı  tek satırlıklar
+
+php tagleri arası globaldir
+
+<?php
+
+
+GLOBAL
+
+PHP KOMUTU{
+YEREL LOCAL ALAN
+
+}
+
+
+
+GLOBAL
+?>
+ phpİnfo() : phpnin o anki durumu hakkındaki bilgilerin ekran çıktılamasını sağlamak için kullanılır.
+
+Değerler : 
+INFO_ALL = TÜM BİLGİLER(ÖNTANIMLI DEĞERDİR)
+INFO_CREDITS =KATKIDA BULUNANLARIN BİLGİLERİ
+INFO_GENERAL =GENEL BİLGİLERİ
+INFO_CONFIGURATİON =KONFİGRADYON BİLGLERİ
+INFO_MODULES =MODÜLE BİLGİLERİ 
+INFO ENVIROMENT=ORTAM BİLGİLERİ
+INFO_VARIABLES=ÖNTANIMLI DEĞİŞKEN BİLGİELRİ
+
+
+ana veri türleri:
+boolean mantıksal
+integer tam sayı 
+double/float ondalıklı sayı
+string dize karakter
+
+bileşik veri türleri:
+array dizi
+object nesne
+
+özel veri türleri:
+resource kaynak
+null boş
+callable geri çağırım
+
+
+phpde operatörler nedir?
+UNARY :TEK OPERAND ALAN OPERATÖR
+BİNARY : ÇİFT OPERAND ALAN OPERATÖR
+TERNARY : ÜÇ OPERAND ALAN OPERATÖR
+
+Mantıksal Operatörler:
+and=ve
+or=veya
+xor=ayrıcalıklı veya
+!=değil
+&&=ve
+||=veya
+
+
+Atama Operatörleri:
+
+=eşittir
+.=birleştrime ataması
++=topla ataması
+-=çıkartma ataması
+*=çarpma ataması
+/=bölü ataması
+%=kalan ataması
+
+Karşılaştırma Operatörleri:
+== eşit ise
+!= eşit değilse
+<> eşit değil ise
+=== denk ise
+!== denk değil ise
+< küçük
+> büyük
+<= kücük eşit
+>= büyük eşit ise
+
+
+
+++ =arttır
+-- =azalt
+değerin sonuna eklenirse ilk çalıştığında aynı ikincide 1 artar ya da zalı  önüne eklendiği anda direkt çalışır.
+
+
+Özel Operatöler:
+. birleştirme operatörüdür
+$a=volkan $b=alakent olsun
+$a . $b =volkan alakent 
+
+'ping -n 3 "site adı "  ' ;
+çalıştırma operatör, oalrak kullanır
+
+
+@ hata kodu baastırmamak için kullanılır
+
+new yeni nesne obje oluşturrmak için kulanılır
+this bu işaret etmek için kullanılır
+instanceof????
+
+
+DEĞİŞKENLER:
+
+daima dolar işareti ile başlarlar
+mutlaka harf veya _ ile başlar
+rakam ile hiçbir zaman başlayamaz
+isim içinde alfenumerik değerler(a-z,0-9) ve _ kullanılır
+değişken isim içerisinde boşluk türkçe karakter veya özel karakter kullanılamaz
+değişken isimleri büyük harf/küçük harf duyarlıdır.
+değişken isimelri birden fazla kez kullanılır fakat son değişkenin değeri oalrak güncellenir
+
+
+değişken değişken nedir?
+nromalde değişken $ ile iken değişken değişken  ile yazılır ve isim oalrak aynı olsa da farklı yazar:
+$deger=nisa
+$$deger=nefise
+
+echo $deger
+echo $$deger nisanefise yazar $$ kullanırke değişken adını değiştirebilirim.
+
+
+
+
+$isim="nisa"
+$soyisim="çıldız"
+$yas="21"
+ 
+$sonuc= "Merhaba" . $isim . $soyisim . $yas -etkili kullanım
+
+
+
+SUPER GLOBALS :
+
+$GLOBALS = ATANACK OLAN DEĞİŞKEN İÇİN KAPSAMA / ETKİ ALANININ DEĞİŞTİRİLMESİNİ SAĞLAR. GLOBALE LOCALDEN ,LOCALDEKİNE GLOBALDEN ERİŞİM SAĞLAR.
+
+function deneme(){
+
+$isim= "nisa çıldız";
+
+}
+echo $isim ;
+
+localde olduğundan erişemiyorum bu yüzden globalden erişmek için 
+
+function deneme{}[
+$GLOBALS ["isim"] = "nisa çıldız";
+]
+deneme();
+
+echo $GLOBALS ["isim];
+
+
+$_SERVER GLOBALİ
+
+$deger = $_SERVER["PHP_SELF"];
+echo $Deger;
+
+ya da 
+
+echo $_SERVER["PHP_SELF"]; şeklinde kullanımları vardır 
+bize çalışmata olan url yol tanımlama bilgisini döndürür url adını içermz.
+echo $_SERVER["SERVER_NAME"]; server adını döndürrür
+echo $_SERVER["SERVER_SOFTNAME"]; kullandığımız apache yazılım bilgisini döndürür
+
+echo  $_SERVER["SERVER_PROTOCOL"]; işlem yapıldığı protokolün isim ve sürüm bilgisini verir.
+echo   $_SERVER["REQUEST_METHOD"]; istek methoduun hangi yöntem olduğunu belirtir.
+echo $_SERVER["REQUEST_TIME"];  1ocaktan 1970 sonra geçen her bir saniye bilgisi
+echo  $_SERVER["REQUEST_TIME_FLOAT"]; mikrosaniye değeri ile verir.
+echo  $_SERVER["QUERY_STRING"]; erişim esnasında kullanılan sorgu dizesidir
+echo  $_SERVER["DOCUMENT_ROOT"]; erişilen geçeri php dosyasının çalıştığı root yani kök dizini döndürür.
+echo $_SERVER["HTTP_ACCEPT"];  php dosyasına erişim için kabul edilen başlık bilgileri
+echo  $_SERVER["HTTP_ACCEPT_ENCODING"];   php dosyasına erişim için kabul edilen kodlama başlık içeriği
+echo $_SERVER["HTTP_ACCEPT_LANGUAGE"];  php dosyasına erişim için kabul edilen lisan başlık içeriği
+echo $_SERVER["HTTP_CONNECTION"];  php dosyasına erişim için kabul edilen bağlantı başlık içeriği
+echo  $_SERVER["HTTP_HOST"]; php doyasasının çalıştığı host başlığı DOMAİN yani
+
+
+echo $_SERVER["HTTP_REFERER"];  kullanıcının browserını geöerli php dosyasına gönderen sayfanın url bilgisini dndürrür.
+
+echo $_SERVER["HTTP_USER_AGENT"];   KULLANICI BROWSER SİSTEM BİLGİSİNİ DÖNDÜRÜR
+
+echo $_SERVER["HTTPS"]; https protokolü kulalnırsan on ya da of yazar.
+
+echo $_SERVER["REMOTE_ADDR"];  göürntüleyen kulllanıcının ip adresini almayı sağlar.
+
+
+ echo $_SERVER["REMOTE_HOST"];  görüntüleyen kullanıcın ev sahibi başlığını döndürür.bilgisayar adını döndürrür yani.
+
+    echo $_SERVER["REMOTE_PORT"];  bağlandığım port numaram
+    echo $_SERVER["SCRIPT_FILENAME"];  server üstündeki mutlak yol tanımlama bilgi değerini döndürür.
+    echo $_SERVER["SERVER_ADMIN"];  ilgili apache serverındaki server admin kısmından adres bilgisi döndürür
+
+    echo $_SERVER["SERVER_PORT"]; sunucu apache deki portu listen kısmında yer alır döndürür
+    echo $_SERVER["SERVER_SIGNATURE"];   server imzası yani yazılım ev sahibi vs  hepsinin değeri döner.
+    echo $_SERVER["SCRIPT_NAME"]; server üstünde bulunduğu yol
+
+
+
+$_GET URL ÜSTÜNDEN GELEN VERİLERE ULAŞABİLME İMKANI SAĞLAR BUNLARDA GENELDE FORM İŞLEMLERİ VS 
+
+
+PHPDE SABİTLER:
+sabitler ve içerikeleri define veya const tanımı ile oluşturulur
+mutlaka harf veya _ ile başlar
+rakam ile hiçbir zaman başlayamaz
+isim içinde alfenumerik değerler(a-z,0-9) ve _ kullanılır
+sabitler isim içerisinde boşluk türkçe karakter veya özel karakter kullanılamaz
+sabitler isimleri büyük harf/küçük harf duyarlıdır.eğer istenirse bu duyarlılık kaldırılabilir.
+sabitler isimelri birden fazla kez kullanılmaz
+her yerden erişilebilir
+değiştirilemez tanımsız duurma getirilemez.
+sabitlri komple büyük harfle yazmalısın.Normali de çalışır ama büyük harf yap.
+
+
+define("isim","volkan alakent"); 
+echo isim;
+
+
+const Isim = "nisaçıldız";
+echo Isim ;
+
+
+constta veriyi değişken olarak atarsan çalışmaz define ve const fonksiyonu birbirinden apayrıdır böyle yapıcaksan define kullanmalısın.
+
+
+birden fazla sabii tek bir sabit içinde toplama :
+
+define("ISIM","nisa");
+define("SOYISIM","çıldız");
+define("SONUC",ISIM.SOYISIM);
+
+echo SONUC ;
+
+
+BİRİ DEFİNE BİRİ CONST İLE OLUŞMUŞSA EĞER AYNI ŞEKİLDE ÇALIŞMAYA DEVAM EDER Bİ SIKINTI ÇIKMAZ.
+
+
+SABİTTE İSTENİLEN KARAKTERLERE ULAŞMA:
+
+define("ISIMSOYISIM","NİSA ÇILDIZ");
+echo ISIMSOYISIM[1];
+
+ÇIKITISI=n'DİR
+
+
+magic constance;
+__LINE__ =İÇERİSİNDE BULUNDUĞU SATIRIN SATIR NUMARASI BİLGİSİNİ DÖNDÜRÜR
+__DIR__ = İÇERİSİNDE BULUNDUĞU DİZİN BİLGİSİ DEĞERİNİ DÖNDÜRÜR.
+__FILE__ =İÇERİSİNDE BULUNDUĞU ÇALIŞMAKTA OLAN DOSYANIN DİZİN BİLGİİSİ VE DOSYA ADINI DÖNDÜRÜR.
+__FUNCTION__=İÇERİSİNDE BULUNDUĞU FONKSİYONUN,FONKSİYON ADI BİLGİSİNİ DÖNDÜRÜR
+__CLASS__=İÇERİSİNDE BULUNDUĞU SINIFIN SINIF ADI BİLGİSİNİ DÖNDÜRÜR.
+__METHOD__=İÇERİSİNDE BULUNDUĞU SINIF DAHİLİNDE KULLANILACAK METHODUN METHOD ADI BİLGİSİNİ DÖNDÜRÜR
+__TRAIT__=İÇERİSİNDE BULUNDUĞU SINIF DAHİLİNDE KULLANILACAK OLAN ÖZELLİĞİN ÖZELLİK ADI BİLGİSİNİ DÖNDÜRÜR.
+__NAMESPACE__=İÇERİSİNDE BULUNDUĞU NAMESPACEİN(İSİM UZYAININ)NAMESPACE ADI BİLGİSİ DEĞERİNİ DÖNDÜRÜR
+
+
+$Islem->Deneme(); ------ sınıfın içineki fonk bu şekilde çağırılır.
+
+
+isim uzayı sayfanın en üstünde olmak zorundadır. namespace..
+
+
+DİZİLLER:
+
+girdiğimiz sıralı değerleri alan veya programın çalışması ile sıralı değerlerin aandığı veri tutuculardır 
+print_r()bir dizinin insanlarca okunabilecek gösterimin ekran çıktılamasını sağlamak için kullanılır.
+
+kurallar
+diziler array() fonk veya [] ile oluşturulur.
+isim içinde alfenumerik değerler(a-z,0-9) ve _ kullanılır
+isimde boşluk türkçe karakter ve özel karakter kullanılmaz
+anahtar isimleri tanımlarken php tarafından kullanılmakta olan isimler kulllanılmaz
+büyük- küçük hrf duyarlıdır
+diziiye tanımlanıcak anahtar kelimeaynı dizi içerisinde birden fazla kez kullanılmaz
+dizi elemanlarına anatar isimleri tanımlanmayacak olucak ise her bir dizi elemanı için anahtar isimleri otomotik olarak oluşturur.
+
+
+yapısı 
+array(Anahtar=>Eleman,...);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
