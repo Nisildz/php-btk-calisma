@@ -302,7 +302,177 @@ yapısı
 array(Anahtar=>Eleman,...);
 
 
+ternary :
+ yapısı: (koşul veya koşullar) ? geçerli ifade : geçersiz ifade ;
 
+
+?? null koşul ifadesi
+
+goto:
+
+kodlama dosyası içerisinde belirtilecek olan imlenmş hedeflenmiş saıra atlama koşuludur
+
+goto IM/HEDEF : yazınca yazdığımız yerden sonrasını çalıştırır öncesini atlar.
+
+try: hata oluşturabilecek kodar için kullanılır
+catch: hata oluşursa çalıştırılacak kodlar için kullanılır
+finally:hata oluşsada oluşmasada çalıştırılacak kodlar için kullanılır
+throw:hata oluşturabilecek kodlar için istisnai durumlarda kullanılır
+exception : tüm istisnalar için önceden tanımlı olan temel sınıfı çağırmak için kullanılır
+getMessage():tüm istisnalar için oluşturulacak olan iletinin atandığı veri tutuculardır.
+
+
+yapısı:
+try{
+	kod bokları
+	throw new exception(ileti);
+}catch(exception ileti ataması){
+	kod blokları
+}finally{
+	kod bblokları
+}
+
+Hata Raporlamaları :
+errror_reporting():hata rapolama işlemleri dahilinde bulununan tüm hata seviyelerinin ayarlama işlemleri için kullanılır.
+E_ALL:TÜM SEVİYE HATALARI
+E_ERROR:ÖNEMLİ ÇALIŞMA ZAMANI HATALRI
+E_WARNING:ÖNEMLİ OLMAYAN ÇALIŞMA ZAMANI UYARILARI
+E_PARSE:DERLEME ZAMANI AYRIŞTIRMA HATALARI
+E_NOTICE:ÇALIŞMA ZAMANI BİLDİRİMLERİ
+
+
+Dizileri Ekrana Yazdırmak
+
+$a = array("elma","armut","seftali");
+
+foreach ($a as $key => $value) {
+
+echo "key:".$key."=>value:".$value."<br/>";
+
+}
+
+//Ekran çıktısı
+
+key:0=>value:elma
+key:1=>value:armut
+key:2=>value:seftali
+
+
+Çok Boyutlu Diziler
+
+İlk deger satırı ikinci deger ise sütunu simgeler.
+
+$cokboyutludizi = array();
+
+//Dizi degererini tanımlıyoruz
+
+$cokboyutludizi[] = array(
+
+'0satir0sutun',
+
+'0satir1sutun'
+
+);
+
+$cokboyutludizi[] = array(
+
+'1satir0sutun',
+
+'1satir1sutun'
+
+);
+
+
+echo $cokboyutludizi[0][1]." ".$cokboyutludizi[1][1];
+
+Ekran çıktısı: 0satir1sutun 1satir1sutun
+
+
+array_flip: Belirtilen keyleri value,value degerlerinide key yapar.
+
+$ornek=array('k1'=>'v1','k2'=>'v2','k3'=>'v3');
+
+print_r(array_flip($ornek));
+
+//Çıktısı [v1] => k1 [v2] => k2 [v3] => k3
+array_reverse: Belirtilen value degerlerini büyükten küçüğe sıralar.
+$ornek=array('a'=>'v1','b'=>'v2','c'=>'v3');
+
+print_r(array_reverse($ornek));
+
+//Çıktısı [c] => v3 [b] => v2 [a] => v1
+sort: Belirtilen value değerlerini A'dan Z'ye veya rakamsa küçükten büyüğe sıralar.
+$ornek=array('a'=>'burak','b'=>'mahmut','c'=>'ali');
+
+sort($ornek);
+
+print_r($ornek);
+
+//Çıktısı [0] => ali [1] => burak [2] => mahmut
+rsort: Sort fonksiyonunun tersini yapar.
+ksort: Belirtilen key değerlerini A'dan Z'ye veya rakamsa küçükten büyüğe sıralar.
+krsort: ksort fonksiyonunun tersi işlem yapar.
+$ornek=array('c'=>55,'a'=>44,'b'=>66);
+
+ksort($ornek);
+
+print_r($ornek);
+
+Çıktısı: [a] => 44 [b] => 66 [c] => 55
+array_push: Diziye değer eklemeye yarar.
+array_pop: Diziye eklenen son değerin otomatik olarak çıkarılmasını sağlar.
+$ornek=array();
+
+array_push($ornek,'deger1','deger2');
+
+print_r($ornek);//Çıktısı [0] => deger1 [1] => deger2
+
+array_pop($ornek);
+
+print_r($ornek);//Çıktısı [0] => deger1
+
+
+array_shift: Dizinin ilk elemanının çıkartılmasını sağlar.
+
+array_unshift: Dizinin başına değer ya da değerler eklenmesini sağlar.
+
+$ornek=array('deger1','deger2');
+
+array_shift($ornek);
+
+print_r($ornek);
+
+//Çıktısı: [0] => deger2
+
+array_unshift($ornek,'deger3','deger4','deger5');
+
+print_r($ornek);
+
+//Çıktısı: [0] => deger3 [1] => deger4 [2] => deger5 [3] => deger2
+
+array_diff: 2 dizi arasındaki farklı olan elemanını veya elemanlarını verir. İlk yazılan dizinin ikinci diziye göre olan farklı olan elemanını veya elemanlarını verir.
+
+$dizi1=array(1,2,3,4);
+
+$dizi2=array(1,2,3);
+
+print_r(array_diff($dizi1,$dizi2));//İlk dizideki 4 farklı.
+
+//Çıktısı [3] => 4
+
+array_intersect: 2 dizi arasındaki aynı olan elemanını veya elemanlarını verir. İlk yazılan dizinin ikinci diziye göre olan aynı olan elemanını veya elemanlarını verir.
+
+$dizi1=array(3,5,7);
+
+$dizi2=array(1,2,3);
+
+print_r(array_intersect($dizi1,$dizi2));
+
+//Çıkısı: [0] => 3
+
+
+
+GETTYPE():HERHANGİ BİR DEĞİŞKEN İÇERİĞİNİN VERİ TÜRÜNÜ BULARAK,BULDUĞU DEĞERİ GERİYE DÖNDÜRÜR.
 
 
 
